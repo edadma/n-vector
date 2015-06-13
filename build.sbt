@@ -1,7 +1,7 @@
 import AssemblyKeys._
 
 
-name := "nvector"
+name := "n-vector"
 
 version := "0.1"
 
@@ -43,12 +43,12 @@ pomIncludeRepository := { _ => false }
 
 licenses := Seq("MIT" -> url("http://opensource.org/licenses/MIT"))
 
-homepage := Some(url("https://github.com/edadma/nvector"))
+homepage := Some(url("https://github.com/edadma/n-vector"))
 
 pomExtra := (
   <scm>
-    <url>git@github.com:edadma/nvector.git</url>
-    <connection>scm:git:git@github.com:edadma/nvector.git</connection>
+    <url>git@github.com:edadma/n-vector.git</url>
+    <connection>scm:git:git@github.com:edadma/n-vector.git</connection>
   </scm>
   <developers>
     <developer>
