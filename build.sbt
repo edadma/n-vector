@@ -23,8 +23,6 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test"
 
 libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.11.5" % "test"
 
-libraryDependencies += "ca.hyperreal" %% "scalgorithms" % "0.1"
-
 mainClass in (Compile, run) := Some( "ca.hyperreal.nvector.Main" )
 
 assemblySettings
