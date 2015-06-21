@@ -3,7 +3,7 @@ import AssemblyKeys._
 
 name := "n-vector"
 
-version := "0.1"
+version := "0.2"
 
 scalaVersion := "2.11.6"
 
@@ -19,9 +19,9 @@ resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/release
 
 resolvers += "Hyperreal Repository" at "https://dl.bintray.com/edadma/maven"
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.1" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 
-libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.11.5" % "test"
+libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.12.4" % "test"
 
 mainClass in (Compile, run) := Some( "ca.hyperreal.nvector.Main" )
 

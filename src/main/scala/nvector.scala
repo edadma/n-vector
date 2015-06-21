@@ -13,12 +13,20 @@ package object nvector
 	// Mean radius as defined by the International Union of Geodesy and Geophysics (IUGG)
 	val R1 = (2*equatorialRadius + polarRadius)/3
 	
-	val North: NVector = Vector( 0, 0, 1 )
-	
 	type Angle = Double
 	type Distance = Double
-	
 	type NVector = Vector[Double]
+	
+	val NorthVector: NVector = Vector( 0, 0, 1 )
+	
+	val North = 0
+	val NorthEast = 45
+	val East = 90
+	val SouthEast = 135
+	val South = 180
+	val SouthWest = -135
+	val West = -90
+	val NorthWest = -45
 	
 	implicit def _raiseVector( x: NVector ) =
 		new AnyRef
@@ -68,5 +76,12 @@ package object nvector
 	
 	def distance( a: Angle ): Distance = a*R1
 	
-	def angle( dist: Double ) = dist/R1
+	def kilometers( dist: Double ) = dist/R1
+	
+	def degrees( bearing: Double ) = (-bearing).toRadians
+	
+	def distant( start: NVector, bearing: Double, distance: Double ): NVector =
+		rotate( start, rotate(normalize(start cross NorthVector), start, degrees(bearing)), kilometers(distance) )
+	
+	def distant( start: Geo, bearing: Double, distance: Double ): Geo = toGeo( distant(fromGeo(start), bearing, distance) )
 }

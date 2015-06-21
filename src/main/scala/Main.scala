@@ -3,17 +3,10 @@ package ca.hyperreal.nvector
 
 object Main extends App
 {
-	val montreal = Geo(45.536482, -73.592702)
-	val phoenix = Geo(33.4500, -112.0667)
+	val montreal = Geo(45.5017, -73.5673)
+	val nw100km = distant( montreal, NorthWest, 100 )
 	
-	val m = fromGeo( montreal )
-	val axis = normalize( m cross North )
-	val d100 = angle(100)
-	val n100 = rotate( m, axis, d100 )
-	val sideways = normalize( axis cross m )
-	val e100 = rotate( m, sideways, d100 )
-	
-	println( distance(montreal, phoenix) )
 	println( montreal )
-	println( toGeo(e100), distance(m, e100) )
+	println( nw100km )
+	println( distance(montreal, nw100km) formatted "%.2f" )
 }
